@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Oráculo VOV</title>
+
+<style>
+
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#000;
+  color:#fff;
+  text-align:center;
+}
+
+.container{
+  max-width:600px;
+  margin:auto;
+  padding:20px;
+}
+
+input{
+  width:90%;
+  padding:12px;
+  border-radius:10px;
+  border:none;
+  margin-top:10px;
+}
+
+button{
+  padding:12px 20px;
+  border-radius:10px;
+  border:none;
+  background:#FFD700;
+  cursor:pointer;
+  margin-top:10px;
+  font-weight:bold;
+}
+
+.card{
+  background:#111;
+  padding:20px;
+  border-radius:12px;
+  margin-top:20px;
+}
+
+#hexagrama{
+  margin-top:15px;
+  font-family:monospace;
+  line-height:1.4em;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🔥 TESTE NOVO VOV 🔥</h1>
+<p>Oráculo VOV — Motor Real Ativo</p>
+
+<input id="pergunta" placeholder="Qual é a sua questão?" />
+
+<br>
+
+<button onclick="consultar()">Consultar</button>
+
+<div id="resultado"></div>
+
+</div>
+
+<!-- BASE -->
+<script src="hexagramas.js"></script>
+
+<!-- MOTOR REAL -->
+<script>
+
+// MAPA DOS 64 HEXAGRAMAS
+const mapa = {
+"111111":1,"000000":2,"100010":3,"010001":4,"111010":5,"010111":6,
+"010000":7,"000010":8,"111011":9,"110111":10,"111000":11,"000111":12,
+"101111":13,"111101":14,"001000":15,"000100":16,"100110":17,"011001":18,
+"110000":19,"000011":20,"100101":21,"101001":22,"000001":23,"100000":24,
+"100111":25,"111001":26,"100001":27,"011110":28,"010010":29,"101101":30,
+"001110":31,"011100":32,"001111":33,"111100":34,"000101":35,"101000":36,
+"101011":37,"110101":38,"001010":39,"010100":40,"110001":41,"100011":42,
+"111110":43,"011111":44,"000110":45,"011000":46,"010110":47,"011010":48,
+"101110":49,"011101":50,"100100":51,"001001":52,"001011":53,"110100":54,
+"101100":55,"001101":56,"011011":57,"110110":58,"010011":59,"110010":60,
+"110011":61,"001100":62,"010101":63,"101010":64
+};
+
+// GERAR LINHAS (0 = yin, 1 = yang)
+function gerarHex(){
+  let linhas = [];
+  for(let i=0;i<6;i++){
+    linhas.push(Math.random() < 0.5 ? 0 : 1);
+  }
+  return linhas;
+}
+
+// DESENHO
+function desenhar(linhas){
+  return linhas.map(l => l ? "━━━" : "━ ━").reverse().join("<br>");
+}
+
+// CONSULTA
+function consultar(){
+
+  let pergunta = document.getElementById("pergunta").value.trim();
+
+  if(!pergunta){
+    alert("Formule sua pergunta.");
+    return;
+  }
+
+  let linhas = gerarHex();
+
+  let chave = linhas.join("");
+  let numero = mapa[chave];
+
+  let info = HEXAGRAMAS[numero];
+
+  let resultado = `
+  <div class="card">
+
+  <strong>Pergunta:</strong><br>
+  ${pergunta}
+
+  <br><br>
+
+  <strong>Hexagrama:</strong><br>
+  ${numero} — ${info.nome}
+
+  <div id="hexagrama">
+  ${desenhar(linhas)}
+  </div>
+
+  <br>
+
+  <strong>Essência:</strong><br>
+  ${info.essencia}
+
+  <br><br>
+
+  <strong>Direção:</strong><br>
+  ${info.direcao}
+
+  </div>
+  `;
+
+  document.getElementById("resultado").innerHTML = resultado;
+
+}
+
+</script>
+
+</body>
+</html>
