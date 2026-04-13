@@ -1,12 +1,75 @@
 const HEXAGRAMAS = {
-  1: {
-    nome: "O Criativo",
-    essencia: "Força ativa pura.",
-    direcao: "Agir com constância."
-  },
-  2: {
-    nome: "O Receptivo",
-    essencia: "Acolhimento e sustentação.",
-    direcao: "Receber antes de agir."
-  }
+
+1:{nome:"O Criativo",essencia:"Força ativa pura.",direcao:"Aja com constância e liderança."},
+2:{nome:"O Receptivo",essencia:"Acolhimento e sustentação.",direcao:"Receba, nutra e consolide."},
+3:{nome:"Dificuldade Inicial",essencia:"Começo desafiador.",direcao:"Organize antes de avançar."},
+4:{nome:"A Insensatez Juvenil",essencia:"Aprendizado necessário.",direcao:"Busque orientação antes de agir."},
+5:{nome:"A Espera",essencia:"Tempo correto.",direcao:"Cultive paciência estratégica."},
+6:{nome:"Conflito",essencia:"Tensão entre forças.",direcao:"Evite confronto direto."},
+7:{nome:"O Exército",essencia:"Disciplina coletiva.",direcao:"Organize suas forças."},
+8:{nome:"Manter-se Unido",essencia:"Aliança.",direcao:"Una-se com propósito."},
+
+9:{nome:"O Poder de Domar do Pequeno",essencia:"Força sutil.",direcao:"Aja com precisão."},
+10:{nome:"A Conduta",essencia:"Postura correta.",direcao:"Caminhe com cautela."},
+11:{nome:"Paz",essencia:"Harmonia.",direcao:"Aproveite para construir."},
+12:{nome:"Estagnação",essencia:"Bloqueio.",direcao:"Recolha-se e observe."},
+13:{nome:"Comunidade com os Homens",essencia:"União consciente.",direcao:"Trabalhe em grupo."},
+14:{nome:"Grandes Posses",essencia:"Abundância.",direcao:"Administre com sabedoria."},
+15:{nome:"Modéstia",essencia:"Equilíbrio.",direcao:"Mantenha humildade."},
+16:{nome:"Entusiasmo",essencia:"Energia em movimento.",direcao:"Direcione com foco."},
+
+17:{nome:"Seguir",essencia:"Adaptação.",direcao:"Acompanhe o fluxo."},
+18:{nome:"Trabalho sobre o que se Deteriora",essencia:"Correção.",direcao:"Ajuste a raiz do problema."},
+19:{nome:"Aproximação",essencia:"Crescimento gradual.",direcao:"Prepare-se para assumir."},
+20:{nome:"Contemplação",essencia:"Observação.",direcao:"Veja antes de agir."},
+21:{nome:"Morder",essencia:"Decisão firme.",direcao:"Corte o que impede avanço."},
+22:{nome:"Graciosidade",essencia:"Beleza e forma.",direcao:"Harmonize aparência e essência."},
+23:{nome:"Desintegração",essencia:"Queda.",direcao:"Prepare desapego."},
+24:{nome:"Retorno",essencia:"Recomeço.",direcao:"Volte ao essencial."},
+
+25:{nome:"Inocência",essencia:"Pureza.",direcao:"Aja com verdade."},
+26:{nome:"O Poder de Domar do Grande",essencia:"Força contida.",direcao:"Controle antes de agir."},
+27:{nome:"Alimentação",essencia:"Nutrição.",direcao:"Cuide do que sustenta."},
+28:{nome:"Preponderância do Grande",essencia:"Sobrecarga.",direcao:"Evite excesso."},
+29:{nome:"O Abismal",essencia:"Perigo.",direcao:"Avance com cautela."},
+30:{nome:"Aderir",essencia:"Clareza.",direcao:"Ilumine com discernimento."},
+31:{nome:"Influência",essencia:"Atração.",direcao:"Conecte-se com consciência."},
+32:{nome:"Duração",essencia:"Continuidade.",direcao:"Seja constante."},
+
+33:{nome:"A Retirada",essencia:"Recuo estratégico.",direcao:"Retire-se com inteligência."},
+34:{nome:"O Poder do Grande",essencia:"Força intensa.",direcao:"Use com responsabilidade."},
+35:{nome:"Progresso",essencia:"Avanço.",direcao:"Siga em frente."},
+36:{nome:"Obscurecimento da Luz",essencia:"Ambiente adverso.",direcao:"Proteja sua essência."},
+37:{nome:"A Família",essencia:"Estrutura.",direcao:"Fortaleça vínculos."},
+38:{nome:"Oposição",essencia:"Diferença.",direcao:"Aceite divergências."},
+39:{nome:"Obstrução",essencia:"Barreira.",direcao:"Reavalie o caminho."},
+40:{nome:"Liberação",essencia:"Alívio.",direcao:"Solte o que prende."},
+
+41:{nome:"Diminuição",essencia:"Redução.",direcao:"Simplifique."},
+42:{nome:"Aumento",essencia:"Expansão.",direcao:"Invista energia."},
+43:{nome:"Irromper",essencia:"Decisão final.",direcao:"Seja firme."},
+44:{nome:"Vir ao Encontro",essencia:"Surpresa.",direcao:"Cuidado com influências."},
+45:{nome:"Reunião",essencia:"Coletividade.",direcao:"Organize o grupo."},
+46:{nome:"Ascensão",essencia:"Crescimento.",direcao:"Suba gradualmente."},
+47:{nome:"Opressão",essencia:"Limite.",direcao:"Resista com consciência."},
+48:{nome:"O Poço",essencia:"Fonte.",direcao:"Acesse o essencial."},
+
+49:{nome:"Revolução",essencia:"Mudança.",direcao:"Transforme-se."},
+50:{nome:"O Caldeirão",essencia:"Transmutação.",direcao:"Refine o processo."},
+51:{nome:"O Incitar",essencia:"Impacto.",direcao:"Mantenha presença."},
+52:{nome:"A Quietude",essencia:"Imobilidade.",direcao:"Silencie."},
+53:{nome:"Desenvolvimento",essencia:"Evolução.",direcao:"Avance gradualmente."},
+54:{nome:"A Jovem se Casa",essencia:"Dependência.",direcao:"Evite submissão."},
+55:{nome:"Abundância",essencia:"Plenitude.",direcao:"Aproveite com consciência."},
+56:{nome:"O Viajante",essencia:"Transitoriedade.",direcao:"Adapte-se."},
+
+57:{nome:"A Suavidade",essencia:"Penetração.",direcao:"Seja persistente."},
+58:{nome:"Alegria",essencia:"Leveza.",direcao:"Compartilhe."},
+59:{nome:"Dispersão",essencia:"Dissolução.",direcao:"Deixe ir."},
+60:{nome:"Limitação",essencia:"Restrição.",direcao:"Defina limites."},
+61:{nome:"Verdade Interior",essencia:"Intuição.",direcao:"Confie no interior."},
+62:{nome:"Preponderância do Pequeno",essencia:"Detalhe.",direcao:"Modere ações."},
+63:{nome:"Após a Conclusão",essencia:"Finalização.",direcao:"Revise tudo."},
+64:{nome:"Antes da Conclusão",essencia:"Transição final.",direcao:"Prepare o fechamento."}
+
 };
