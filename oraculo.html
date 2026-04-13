@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Oráculo VOV</title>
+
+<style>
+
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#000;
+  color:#fff;
+  text-align:center;
+}
+
+.container{
+  max-width:600px;
+  margin:auto;
+  padding:20px;
+}
+
+input{
+  width:90%;
+  padding:12px;
+  border-radius:10px;
+  border:none;
+  margin-top:10px;
+}
+
+button{
+  padding:12px 20px;
+  border-radius:10px;
+  border:none;
+  background:#FFD700;
+  cursor:pointer;
+  margin-top:10px;
+}
+
+.card{
+  background:#111;
+  padding:20px;
+  border-radius:12px;
+  margin-top:20px;
+}
+
+#hexagrama{
+  margin-top:15px;
+  font-family:monospace;
+  line-height:1.4em;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🔮 Oráculo VOV</h1>
+
+<p>Ver. Ouvir. Vender.</p>
+
+<input id="pergunta" placeholder="Qual é a sua questão?" />
+
+<br>
+
+<button onclick="consultar()">Consultar</button>
+
+<div id="resultado"></div>
+
+</div>
+
+<!-- BASE -->
+<script src="hexagramas.js"></script>
+
+<!-- MOTOR -->
+<script>
+
+// LINHA SIMPLES (yin/yang)
+function linha(){
+  return Math.random() < 0.5 ? 0 : 1;
+}
+
+// GERAR HEXAGRAMA
+function gerarHex(){
+
+  let linhas = [];
+
+  for(let i=0;i<6;i++){
+    linhas.push(linha());
+  }
+
+  return linhas;
+}
+
+// DESENHO
+function desenhar(linhas){
+
+  return linhas.map(l =>
+    l ? "━━━" : "━ ━"
+  ).reverse().join("<br>");
+
+}
+
+// CONSULTA
+function consultar(){
+
+  let pergunta = document.getElementById("pergunta").value.trim();
+
+  if(!pergunta){
+    alert("Formule sua pergunta.");
+    return;
+  }
+
+  let linhas = gerarHex();
+
+  // TEMPORÁRIO (até termos os 64)
+  let numero = Math.floor(Math.random()*2) + 1;
+
+  let info = HEXAGRAMAS[numero];
+
+  let resultado = `
+  <div class="card">
+
+  <strong>Pergunta:</strong><br>
+  ${pergunta}
+
+  <br><br>
+
+  <strong>Hexagrama:</strong><br>
+  ${numero} — ${info.nome}
+
+  <div id="hexagrama">
+  ${desenhar(linhas)}
+  </div>
+
+  <br>
+
+  <strong>Essência:</strong><br>
+  ${info.essencia}
+
+  <br><br>
+
+  <strong>Direção:</strong><br>
+  ${info.direcao}
+
+  </div>
+  `;
+
+  document.getElementById("resultado").innerHTML = resultado;
+
+}
+
+</script>
+
+</body>
+</html>
