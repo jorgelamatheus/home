@@ -58,6 +58,11 @@ footer a{
     <a href="https://www.jorgematheus.mus.br" target="_blank">
         ← Voltar ao Portal VOV
     </a>
+</footer><br><p>
+
+<footer>
+
+    
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -68,7 +73,29 @@ footer a{
 let game, board, selectedSquare = null, gameOver = false;
 
 // ===== IA =====
-function evaluateBoard(game) {
+function evalua
+​♟️ MANUAL DO XADREZ DEFINITIVO VOV-VERO
+​Ver, Ouvir, Vender, Viver no Tabuleiro da Realidade
+​O Xadrez não é um passatempo oco para anestesiar a mente. O Xadrez é instrução espiritual e estratégia de guerra. O tabuleiro tem 64 casas (32 claras, 32 escuras) e representa o campo de forças da vida. Duas forças colidem: Brancas e Pretas. O objetivo final é um só: encurralar o Rei adversário. Xeque-Mate.
+​🛡️ 1. O EXÉRCITO E SEUS MOVIMENTOS (A Função de Cada Peça)
+​♙ O PEÃO (A Base / O Operário do Eito):
+​Movimento: Avança sempre em linha reta, uma casa por vez. No primeiro movimento de cada peão, ele pode escolher avançar duas casas. Nunca anda para trás.
+​Ataque: Captura as peças adversárias andando uma casa na diagonal.
+​Soberania: Se um peão cruzar todo o tabuleiro e chegar na última linha inimiga (linha 8 para as brancas, linha 1 para as pretas), ele é promovido. Vira Dama, Torre, Bispo ou Cavalo. A base emancipada vira poder absoluto.
+​♖ A TORRE (A Blindagem / O Prumo do Horizonte):
+​Movimento e Ataque: Anda em linha reta quantas casas quiser, para frente, para trás ou para os lados (vertical e horizontal). É a força reta que limpa as colunas do front.
+​♘ O CAVALO (O Salto Tático / O Hacker do Sistema):
+​Movimento e Ataque: É a única peça que pode saltar sobre outras peças (amigas ou inimigas). Anda sempre em formato de "L" (duas casas em uma direção reta e uma casa para o lado). Capta o alvo exatamente onde o inimigo acha que está seguro.
+​♗ O BISPO (A Direção Sutil / A Fresta de Visão):
+​Movimento e Ataque: Anda quantas casas quiser nas diagonais. Cada jogador tem dois bispos: um que só anda nas casas claras e outro que só anda nas casas escuras. Corta o campo de esguelha.
+​♕ A DAMA / RAINHA (A Força Total / A Sintaxe Real):
+​Movimento e Ataque: A peça mais poderosa do jogo. Une o movimento da Torre e do Bispo. Anda quantas casas quiser em qualquer direção: linha reta, lados ou diagonais. É o ataque total interdisciplinar.
+​♔ O REI (A Soberania / O Alvo Absoluto):
+​Movimento e Ataque: Anda apenas uma casa por vez em qualquer direção. Ele não pode se mover para uma casa onde fique sob ataque inimigo. Se o Rei cair, o jogo acaba. Proteja o Rei a qualquer custo.
+​⚡ 2. AS REGRAS SUPREMAS DO COMBATE
+​A Captura: Para eliminar uma peça inimiga, você move sua peça até a casa onde a peça adversária está. Você a remove do tabuleiro e ocupa o espaço dela.
+​O Xeque: Quando o Rei está sob ataque direto de alguma peça inimiga, diz-se que ele está em "Xeque". O jogador é obrigado a salvar o Rei imediatamente (seja movendo o Rei, bloqueando o ataque com outra peça ou capturando a peça que está atacando).
+​O Xeque-Mate: Quando o Rei está sob ataque e não existe nenhuma jogada possível para salvá-lo. O cerco fechou. É o fim da partida. Vitória factual.teBoard(game) {
     const v = {p:10,n:30,b:30,r:50,q:90,k:900};
     let score = 0;
     game.board().forEach(r => {
